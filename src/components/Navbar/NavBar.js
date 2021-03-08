@@ -30,7 +30,7 @@ class Navbar extends React.Component {
                     })}
                 </ul>
                 <Button>Sign Up</Button>
-               <CardWidget><AddShoppingCartIcon style={{ fontSize:30 }}></AddShoppingCartIcon></CardWidget>
+                <CardWidget><i className="fas fa-cart-plus"></i></CardWidget>
             </nav>
         )
     }
