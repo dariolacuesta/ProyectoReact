@@ -3,7 +3,6 @@ import {MenuItems} from "./MenuItems"
 import {Button} from '../Button'
 import './Navbar.css'
 import CardWidget from '../CardWidget'
-import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
 
 class Navbar extends React.Component {
