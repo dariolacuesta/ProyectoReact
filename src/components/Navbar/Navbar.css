@@ -137,4 +137,7 @@
     Button{
         display:none;
     }
+    .fa-cart-plus{
+        display:none;
+    }
 }

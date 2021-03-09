@@ -29,7 +29,7 @@ class Navbar extends React.Component {
                     })}
                 </ul>
                 <Button>Sign Up</Button>
-                <CardWidget><i className="fas fa-cart-plus"></i></CardWidget>
+                <CardWidget></CardWidget>
             </nav>
         )
     }
