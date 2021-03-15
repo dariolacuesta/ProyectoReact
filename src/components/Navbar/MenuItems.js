@@ -21,11 +21,6 @@
         cName:'nav-links'
     },
     {
-        title:'Sign Up',
-        url: '#',
-        cName:'nav-links-mobile'
-    },
-    {
         title:'Cart',
         url: '#',
         cName:'nav-links-mobile'

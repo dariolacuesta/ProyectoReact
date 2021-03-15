@@ -11,7 +11,8 @@
     color:#fff;
     justify-self: start;
     margin-left: 20px;
-    cursor:pointer
+    cursor:pointer;
+    margin-top: 10px;
 }
 
 .fa-react{
@@ -63,6 +64,7 @@
 @media screen and (max-width:960px){
     .NavbarItems{
         position: relative;
+        align-items: stretch;
     }
 
     .nav-menu{
@@ -98,7 +100,8 @@
         position:absolute;
         top:0;
         left:0;
-        transform:translate(25%,50%)
+        transform:translate(0%,20%);
+        justify-content:left
     }
     .menu-icon{
         display:block;

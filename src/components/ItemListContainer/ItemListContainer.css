@@ -1,0 +1,43 @@
+p{
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 25px;
+    text-align: center;
+}
+
+h2{
+    font-size: 40px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.itemListContainer{
+    color:white;
+    background:linear-gradient(90deg,rgb(0, 0, 0)0%,rgb(29, 18, 243)100%);
+    display:flex;
+    flex-direction:column;
+}
+
+.fa-spin{
+    text-align:center;
+    margin-top:25px;
+    align-self: auto;
+    flex-basis:0%;
+    display: block
+}
+.itemcount{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.stock{
+    font-size: 50px;
+}
+
+#cantidad{
+    font-size: 20px;
+    margin-left: 400px;
+    margin-right:400px;
+    text-align: center;
+}
+

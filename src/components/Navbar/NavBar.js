@@ -1,8 +1,7 @@
 import React from 'react';
 import {MenuItems} from "./MenuItems"
-import {Button} from '../Button'
 import './Navbar.css'
-import CardWidget from '../CardWidget'
+import CardWidget from '../CardWidget/CardWidget'
 
 
 class Navbar extends React.Component {
@@ -17,9 +16,9 @@ class Navbar extends React.Component {
             <nav className="NavbarItems">
                 <h1 className="navbar-logo">Music Store <i className="fas fa-compact-disc"></i></h1>
                 <div className="menu-icon" onClick={this.handleClick}>
-                   <i className={this.state.clicked? 'fas fa-times':'fas fa-bars'}></i>
+                   <i className={this.state.clicked ? 'fas fa-times':'fas fa-bars'}></i>
                 </div>
-                <ul className={this.state.clicked? 'nav-menu active' : 'nav-menu'}>
+                <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
                     {MenuItems.map((item,index)=>{
                     return(<li key={index}>
                                 <a className={item.cName} href={item.url}>
@@ -28,7 +27,6 @@ class Navbar extends React.Component {
                             </li>)
                     })}
                 </ul>
-                <Button>Sign Up</Button>
                 <CardWidget></CardWidget>
             </nav>
         )
