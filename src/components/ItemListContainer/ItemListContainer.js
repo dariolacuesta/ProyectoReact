@@ -2,8 +2,10 @@ import React from 'react'
 import  './ItemListContainer.css'
 import  ItemCount from '../ItemCount/ItemCount'
 import {useState} from "react";
+import ItemList from "../ItemList/ItemList"
 
-const ItemListContainer = ({curso,proyecto})=>{
+
+const ItemListContainer = (props)=>{
     const [currentStock,setCurrentStock] = useState(5)
     const restartStock = (e,newStock)=>{
     e.preventDefault();
@@ -12,10 +14,10 @@ const ItemListContainer = ({curso,proyecto})=>{
 
 return(
 <div className="itemListContainer fa-3x" >
-    <h2>Bienvenido a mi {proyecto}</h2>
-    <p> Este sera el area utilizado para renderizar elementos en el {proyecto} final de {curso}</p>
+
     <ItemCount stock={currentStock} initial={1} onAdd={restartStock}/>
- </div>
+    <ItemList items={props.items} />
+</div>
  )};
 
  export default ItemListContainer;

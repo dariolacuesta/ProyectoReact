@@ -11,8 +11,7 @@ h2{
 }
 
 .itemListContainer{
-    color:white;
-    background:linear-gradient(90deg,rgb(0, 0, 0)0%,rgb(29, 18, 243)100%);
+    color:black;
     display:flex;
     flex-direction:column;
 }

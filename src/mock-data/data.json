@@ -1,0 +1,16 @@
+ [{
+    "name" : "High Voltage",
+    "img" : "https://images-na.ssl-images-amazon.com/images/I/71oOxpPeGCL._SL1500_.jpg",
+    "price" : 3450,
+    "stock": 12,
+    "stockId" :"Rock",
+    "band" : "ACDC"
+  },{
+    "name" : "Painkiller",
+    "img" : "https://www.todorock.com/wp-content/uploads/2019/09/judas-priest-painkiller-grande-1200x900.jpg",
+    "price" : 2100,
+    "stock": 5,
+    "genre": "Heavy Metal",
+    "band" : "Judas Priest"
+  }]
+
