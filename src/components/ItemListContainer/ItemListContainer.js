@@ -13,9 +13,9 @@ const ItemListContainer = (props)=>{
     setCurrentStock((currentStock)=>(currentStock-newStock));}
 
 return(
-<div className="itemListContainer fa-3x" >
+<div>
 
-    <ItemCount stock={currentStock} initial={1} onAdd={restartStock}/>
+    {/* <ItemCount stock={currentStock} initial={1} onAdd={restartStock}/> */}
     <ItemList items={props.items} />
 </div>
  )};

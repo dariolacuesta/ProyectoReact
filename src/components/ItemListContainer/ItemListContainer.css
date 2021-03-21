@@ -1,6 +1,6 @@
 p{
     font-family: 'Open Sans Condensed', sans-serif;
-    font-size: 25px;
+    font-size: 15px;
     text-align: center;
 }
 
@@ -35,8 +35,6 @@ h2{
 
 #cantidad{
     font-size: 20px;
-    margin-left: 400px;
-    margin-right:400px;
     text-align: center;
 }
 

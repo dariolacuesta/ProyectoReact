@@ -12,7 +12,7 @@
     justify-self: start;
     margin-left: 20px;
     cursor:pointer;
-    margin-top: 10px;
+    font-size: 40px;
 }
 
 .fa-react{
@@ -101,7 +101,9 @@
         top:0;
         left:0;
         transform:translate(0%,20%);
-        justify-content:left
+        justify-content:left;
+        justify-self:left;
+        font-size: inherit;
     }
     .menu-icon{
         display:block;

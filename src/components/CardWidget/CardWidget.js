@@ -22,7 +22,7 @@ export const CardWidget = ({
     const checkCartSize = SIZES.includes(cartSize) ? cartSize : SIZES[0]
 
     return (
-      <button className= {`btn ${checkCartStyle} ${checkCartSize} fas fa-cart-plus `} onClick={onClick}type={type}>
+      <button className= {`btn ${checkCartStyle} ${checkCartSize} fas fa-cart-plus`} onClick={onClick}type={type}>
             {children}
       </button>)}
 export default CardWidget;
