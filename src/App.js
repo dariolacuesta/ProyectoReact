@@ -4,6 +4,7 @@ import './App.css';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import {useEffect,useState} from "react"
 import Itemdata from './mock-data/Itemdata.jsx'
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
 
@@ -14,12 +15,13 @@ function App() {
         correct(Itemdata);
       },2000);
     }).then((resultado)=>setItems(resultado))
-  });
+  },[]);
 
   return (
  <div className="App">
    <Navbar/>
-   <ItemListContainer items={items}/>
+   {/* <ItemListContainer items={items}/> */}
+   <ItemDetailContainer/>
  </div>
   );}
 

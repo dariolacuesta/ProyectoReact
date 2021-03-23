@@ -5,8 +5,9 @@ const Itemdata =[
     "img" : "https://images-na.ssl-images-amazon.com/images/I/71oOxpPeGCL._SL1500_.jpg",
     "price" : 3450,
     "stock": 12,
-    "stockId" :"Rock",
-    "band" : "ACDC"
+    "genre" :"Rock",
+    "band" : "ACDC",
+    "year": 1976
   },{
     "id" : 2,
     "name" : "Painkiller",
@@ -14,7 +15,8 @@ const Itemdata =[
     "price" : 2100,
     "stock": 5,
     "genre": "Heavy Metal",
-    "band" : "Judas Priest"
+    "band" : "Judas Priest",
+    "year":  1990
   }
   ,{
     "id" : 3,
@@ -23,7 +25,20 @@ const Itemdata =[
     "price" : 2100,
     "stock": 5,
     "genre": "Heavy Metal",
-    "band" : "Iron Maiden"
+    "band" : "Iron Maiden",
+    "year": 2000,
+    "review":"Brave New World es el duodécimo álbum de estudio de la banda de heavy metal Iron Maiden lanzado el 29 de mayo del 2000. Marcó la vuelta al grupo del cantante Bruce Dickinson y del guitarrista Adrian Smith lo cual generó mucha expectación e interés por la nueva etapa de la banda.Representa el primer álbum de estudio de la banda en el que tocan tres guitarristas. La canción Brave New World y la carátula del álbum están inspiradas en la novela de Aldous Huxley Brave New World (en español, Un mundo feliz) que trata sobre un mundo futurista distópico. Las canciones The Wicker Ma y Out of the Silent Planet fueron lanzadas como sencillos, y el álbum llegó a convertirse todo un éxito. Además, en Estados Unidos también recibió una crítica excelente.",
+    songs: ["The Wicker Man",
+      "Ghost of the Navigator",
+      "Brave New World",
+      "Blood Brothers",
+      "The Mercenary"	 ,
+      "Dream of Mirrors",
+      "The Fallen Angel",
+      "The Nomad",
+      "Out of the Silent Planet",
+      "The Thin Line Between Love and Hate",
+    ]
   }
   ,{
     "id" : 4,
@@ -32,7 +47,8 @@ const Itemdata =[
     "price" : 2100,
     "stock": 5,
     "genre": "Rock",
-    "band" : "Led Zeppelin"
+    "band" : "Led Zeppelin",
+    "year":1971
   }
   ,{
     "id" : 5,
@@ -41,7 +57,8 @@ const Itemdata =[
     "price" : 2100,
     "stock": 5,
     "genre": "Reggae",
-    "band" : "Bob Marley"
+    "band" : "Bob Marley",
+    "year": 1984
   }
   ,{
     "id" : 6,
@@ -50,7 +67,8 @@ const Itemdata =[
     "price" : 2100,
     "stock": 5,
     "genre": "Pop",
-    "band" : "Michael Jackson"
+    "band" : "Michael Jackson",
+    "year": 1982
   }
   ,{
     "id" : 7,
@@ -59,7 +77,8 @@ const Itemdata =[
     "price" : 2100,
     "stock": 5,
     "genre": "Heavy Metal",
-    "band" : "Pantera"
+    "band" : "Pantera",
+    "year": 1992
   }
   ,{
     "id" : 8,
@@ -68,7 +87,8 @@ const Itemdata =[
     "price" : 2100,
     "stock": 5,
     "genre": "Pop",
-    "band" : "Madonna"
+    "band" : "Madonna",
+    "year": 1984
   }
   ,{
     "id" : 9,
@@ -77,7 +97,8 @@ const Itemdata =[
     "price" : 2100,
     "stock": 5,
     "genre": "Rock",
-    "band" : "No Doubt"
+    "band" : "No Doubt",
+    "year": 2001
   }
   ,{
     "id" : 10,
@@ -86,7 +107,8 @@ const Itemdata =[
     "price" : 2100,
     "stock": 5,
     "genre": "Punk",
-    "band" : "Ramones"
+    "band" : "Ramones",
+    "year": 1977
   }
   ,{
    "id" : 11,
@@ -95,7 +117,8 @@ const Itemdata =[
     "price" : 2100,
     "stock": 5,
     "genre": "Punk",
-    "band" : "Ramones"
+    "band" : "Ramones",
+    "year":1995
   }
   ,{
     "id" : 12,
@@ -104,7 +127,8 @@ const Itemdata =[
     "price" : 2100,
     "stock": 5,
     "genre": "Heavy Metal",
-    "band" : "Ozzy Osbourne"
+    "band" : "Ozzy Osbourne",
+    "year":1980
   },
 { "id" : 13,
   "name" : "Que corra la voz",
@@ -112,7 +136,8 @@ const Itemdata =[
   "price" : 2100,
   "stock": 5,
   "genre": "Ska",
-  "band" : "Ska-P"
+  "band" : "Ska-P",
+  "year":2002
 }
 ,{  "id" : 14,
   "name" : "Im Not Dead",
@@ -120,7 +145,8 @@ const Itemdata =[
   "price" : 2100,
   "stock": 5,
   "genre": "Pop",
-  "band" : "Pink"
+  "band" : "Pink",
+  "year":2006
 }
 ,{"id" : 15,
   "name" : "Books of Shadows II",
@@ -128,7 +154,8 @@ const Itemdata =[
   "price" : 2100,
   "stock": 5,
   "genre": "Heavy Metal",
-  "band" : "Zakk Wylde"
+  "band" : "Zakk Wylde",
+  "year":  2016
 }
 ,{  "id" : 16,
   "name" : "Familiar to Millions",
@@ -136,7 +163,8 @@ const Itemdata =[
   "price" : 2100,
   "stock": 5,
   "genre": "Rock",
-  "band" : "Oasis"
+  "band" : "Oasis",
+  "year": 2000
 }
 ,{"id" : 17,
   "name" : "Atonement",
@@ -144,7 +172,8 @@ const Itemdata =[
   "price" : 2100,
   "stock": 5,
   "genre": "Heavy Metal",
-  "band" : "Killswitch Engage"
+  "band" : "Killswitch Engage",
+  "year": 2019
 }
 ,{"id" : 18,
   "name" : "Incarnate",
@@ -152,7 +181,8 @@ const Itemdata =[
   "price" : 2100,
   "stock": 5,
   "genre": "Heavy Metal",
-  "band" : "Killswitch Engage"
+  "band" : "Killswitch Engage",
+  "year": 2016
 }
 ];
 

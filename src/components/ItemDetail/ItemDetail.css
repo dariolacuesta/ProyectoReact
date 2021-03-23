@@ -1,0 +1,18 @@
+
+img {
+    width:600px;
+	height:400px;
+	line-height:400px;
+	margin:0px auto;
+	text-align:center;
+	background-color:#CCCCCC;
+    margin-bottom: 25px;
+}
+
+.container{
+    text-align: center;
+}
+
+p{
+	font-size: 15px;
+}

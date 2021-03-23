@@ -5,7 +5,7 @@ import {useState} from "react";
 import ItemList from "../ItemList/ItemList"
 
 
-const ItemListContainer = (props)=>{
+const ItemListContainer = ({items})=>{
     const [currentStock,setCurrentStock] = useState(5)
     const restartStock = (e,newStock)=>{
     e.preventDefault();
@@ -16,7 +16,7 @@ return(
 <div>
 
     {/* <ItemCount stock={currentStock} initial={1} onAdd={restartStock}/> */}
-    <ItemList items={props.items} />
+    <ItemList items={items} />
 </div>
  )};
 
