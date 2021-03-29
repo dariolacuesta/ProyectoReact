@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react'
+import { useParams } from 'react-router'
 import Itemdata from '../../mock-data/Itemdata'
 import  ItemDetail from '../ItemDetail/ItemDetail'
 
@@ -7,24 +8,25 @@ import  ItemDetail from '../ItemDetail/ItemDetail'
 const  ItemDetailContainer = ()=> {
 const [Song,setSong] = useState([])
 const [Item,setItem] = useState([])
+let {id} = useParams()
+
+
 useEffect(()=>{
-//    setTimeout(()=>{setSong(Itemdata[2].songs.map(song=><li>{song}</li>))},2000)
+
     const call = new Promise((resolve) =>{
-        setTimeout(()=>{
-            resolve(Itemdata[2]);
-        },2000)
+     resolve(Itemdata[id]);
     })
     call.then(result=>
         {setItem(result);
-        setSong(result.songs.map(song=><li>{song}</li>))
+        setSong(result.songs.map(song=><li key={song}>{song}</li>))
         })
-},[]
+},[id]
 );
 
 
 
 return (<>
-<ItemDetail item1={Item} song={Song}/>
+<ItemDetail  item1={Item} song={Song}/>
 </>)
 }
 export default ItemDetailContainer;

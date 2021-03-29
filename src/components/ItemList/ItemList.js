@@ -3,10 +3,11 @@ import Item from '../Items/Item'
 import  './ItemList.css'
 
 
-const ItemList = ({items}) =>(<div class="row">
-    {items.map((x,index)=>(
-        <Item key ={index} item={x}/>
-        ))}
+const ItemList = ({items}) =>(
+<div className="row">
+    {items.map((x)=>(
+    <Item key ={x.id} item={x}/>
+    ))}
 
 </div>)
 

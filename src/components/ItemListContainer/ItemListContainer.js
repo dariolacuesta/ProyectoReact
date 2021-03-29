@@ -1,23 +1,27 @@
 import React from 'react'
 import  './ItemListContainer.css'
-import  ItemCount from '../ItemCount/ItemCount'
-import {useState} from "react";
+import Itemdata from '../../mock-data/Itemdata.jsx'
+import {useState,useEffect} from "react";
 import ItemList from "../ItemList/ItemList"
 
 
-const ItemListContainer = ({items})=>{
-    const [currentStock,setCurrentStock] = useState(5)
-    const restartStock = (e,newStock)=>{
-    e.preventDefault();
+const ItemListContainer = ({})=>{
 
-    setCurrentStock((currentStock)=>(currentStock-newStock));}
+    const [items,setItems] = useState([])
+    useEffect(()=>{
+      new Promise((correct)=>{
+        setTimeout(()=>{
+          correct(Itemdata);
+        },2000);
+
+      }).then((resultado)=>
+      setItems(resultado)
+      )
+    },[]);
 
 return(
 <div>
-
-    {/* <ItemCount stock={currentStock} initial={1} onAdd={restartStock}/> */}
-    <ItemList items={items} />
+    <ItemList items={items}/>
 </div>
  )};
-
  export default ItemListContainer;

@@ -16,3 +16,20 @@ img {
 p{
 	font-size: 15px;
 }
+
+.stroke {
+	text-align: center;
+	color: white;
+	background:black;
+	font-family: Georgia, serif;
+	font-size: 15px;
+	letter-spacing: 0;
+	text-shadow: -1px -1px 1px #333, 1px -1px 1px #333, -1px 1px 1px #333, 1px 1px 1px #333;
+	margin-top: 15px;
+	}
+.x{
+	text-align: center;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
