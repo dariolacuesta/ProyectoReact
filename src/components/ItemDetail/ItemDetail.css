@@ -25,11 +25,40 @@ p{
 	font-size: 15px;
 	letter-spacing: 0;
 	text-shadow: -1px -1px 1px #333, 1px -1px 1px #333, -1px 1px 1px #333, 1px 1px 1px #333;
-	margin-top: 15px;
+	margin-top: 45px;
 	}
 .x{
 	text-align: center;
 	display:flex;
 	justify-content: center;
 	align-items: center;
+}
+.finish-cart{
+	margin-top: 73px;
+    display:table;
+    text-decoration: none;
+    background: #C20000;
+    color: #000000;
+    font-size: 18px;
+    text-transform: uppercase;
+	position:static;
+	outline:none;
+    border:none;
+    cursor:pointer;
+	border-radius: 4px;
+	padding:8px 20px;
+    border-radius: 4px;
+    margin-right: 10px;
+    margin-left:10px;
+    height:40px;
+    margin-bottom:10px;
+	text-align: center;
+}
+
+.finish-cart:hover{
+    padding:8px 20px;
+    transition:all 0.3 ease-out;
+    background:darkgreen;
+    color: #6568f4;
+    transition:250ms;
 }

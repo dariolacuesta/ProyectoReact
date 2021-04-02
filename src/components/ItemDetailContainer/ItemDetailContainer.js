@@ -1,7 +1,8 @@
 import React,{useState,useEffect} from 'react'
 import { useParams } from 'react-router'
-import Itemdata from '../../mock-data/Itemdata'
+import Itemdata from '../../mock-data/Itemdata.json'
 import  ItemDetail from '../ItemDetail/ItemDetail'
+import ItemListContainer from '../ItemListContainer/ItemListContainer'
 
 
 
@@ -14,19 +15,24 @@ let {id} = useParams()
 useEffect(()=>{
 
     const call = new Promise((resolve) =>{
-     resolve(Itemdata[id]);
+        setTimeout(()=>{resolve(Itemdata)},500);
+     ;
     })
-    call.then(result=>
-        {setItem(result);
-        setSong(result.songs.map(song=><li key={song}>{song}</li>))
+    call.then((result)=>{
+        let filter = id ? result.filter((el)=> el.id === parseInt(id)) : result
+        setItem(filter);
+         setSong(result[id].songs.map(song=><li key={song}>{song}</li>))
         })
 },[id]
 );
 
 
 
-return (<>
-<ItemDetail  item1={Item} song={Song}/>
-</>)
+
+
+return (
+<>{
+ Item.length >0 ? <ItemDetail  item1={Item[0]} song={Song}/>:<ItemListContainer/>
+ }</>)
 }
 export default ItemDetailContainer;

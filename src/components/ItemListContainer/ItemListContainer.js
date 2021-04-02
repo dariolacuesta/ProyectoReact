@@ -1,11 +1,11 @@
 import React from 'react'
 import  './ItemListContainer.css'
-import Itemdata from '../../mock-data/Itemdata.jsx'
+import Itemdata from '../../mock-data/Itemdata.json'
 import {useState,useEffect} from "react";
 import ItemList from "../ItemList/ItemList"
 
 
-const ItemListContainer = ({})=>{
+const ItemListContainer = ()=>{
 
     const [items,setItems] = useState([])
     useEffect(()=>{
