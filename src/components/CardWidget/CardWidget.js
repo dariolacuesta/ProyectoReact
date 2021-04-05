@@ -1,5 +1,6 @@
 import React from 'react'
 import '../button/Button.css'
+import {Link} from 'react-router-dom'
 
 const STYLES = [
     'btn--primary',
@@ -22,7 +23,7 @@ export const CardWidget = ({
     const checkCartSize = SIZES.includes(cartSize) ? cartSize : SIZES[0]
 
     return (
-      <button className= {`btn ${checkCartStyle} ${checkCartSize} fas fa-cart-plus`} onClick={onClick}type={type}>
+      <Link to="/cart" className= {`btn ${checkCartStyle} ${checkCartSize} fas fa-cart-plus`} onClick={onClick}type={type}>
             {children}
-      </button>)}
+      </Link>)}
 export default CardWidget;

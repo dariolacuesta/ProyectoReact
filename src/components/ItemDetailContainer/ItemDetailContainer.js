@@ -14,17 +14,20 @@ let {id} = useParams()
 
 useEffect(()=>{
 
-    const call = new Promise((resolve) =>{
-        setTimeout(()=>{resolve(Itemdata)},500);
-     ;
-    })
-    call.then((result)=>{
+  getItem().then((result)=>{
         let filter = id ? result.filter((el)=> el.id === parseInt(id)) : result
         setItem(filter);
          setSong(result[id].songs.map(song=><li key={song}>{song}</li>))
         })
 },[id]
 );
+const getItem = () => {
+    return new Promise((resolve)=>{
+        setTimeout(()=>{
+            resolve(Itemdata)
+        },2000);
+    })
+}
 
 
 

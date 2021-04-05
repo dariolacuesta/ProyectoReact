@@ -2,20 +2,26 @@ import React, { useState } from 'react';
 import './ItemDetail.css';
 import {Link} from 'react-router-dom'
 import ItemCount from '../ItemCount/ItemCount'
+import {useCartContext} from '../../cartContext/CartContext'
 
 
 
 const  ItemDetail= ({item1,song})=>{
 
+
         const [stock,setStock] = useState(item1.stock)
         const [finishPurchase,setFinishPurchase] = useState(false);
+        const cartContext = useCartContext();
 
         const newStock = (amount) => {
             if (amount <= stock){
                 setStock(stock- amount);
-                setFinishPurchase(true);
-            }
-        }
+                setFinishPurchase(true)
+                cartContext.addItem({
+                        item1,
+                        quantity:amount
+                },
+                )}}
 
         const ShowCounter = () => {
             if(finishPurchase === true){
