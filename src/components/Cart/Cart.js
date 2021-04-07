@@ -4,17 +4,16 @@ import { useCartContext } from '../../cartContext/CartContext'
 const Cart = () =>{
     const {cart,removeFromCart,clearCart,cartSize} = useCartContext();
     let total = 0;
-    console.log(cart.length);
-    console.log(cart.map((x)=>(x.item1.name)))
-    console.log(cart.map((x)=>(x.quantity)))
+    
+    
 
     const removeItem = (e) =>{
         if(e.target.nodeName==="path"){
-            let {id} = cart[e.target.nearestViewportElement.id]["item"]
+            let {id} = cart[e.target.nearestViewportElement.id]["item1"]
             removeFromCart(id)
         }
         else{
-            let{id} = cart[e.target.id]["item"]
+            let{id} = cart[e.target.id]["item1"]
             removeFromCart(id)
         }
     }
@@ -40,23 +39,34 @@ const Cart = () =>{
             <tbody>
              {
               cart.map((x,i)=>{
-                  total  += x.price
+                  total  += x.item1.price * x.quantity
                   return(
                       <tr key={i}>
                                   <td>{x.item1.name}</td>
                                   <td>{x.quantity}</td>
                                   <td>{x.item1.price} x Unidad</td>
+                                  <td>
+                                      <button id={i} onClick={(e)=>removeItem(e)} class="far fa-window-close"></button>
+                                  </td>
                       </tr>
-
+                    
                   )
+                  
               })
              }
+             <tr>
+                 <td/>
+                 <td/>
+                 <td >Vaciar Carrito</td>
+                 <td ><button onClick={()=>RemoveAllitems()} className="fas fa-trash"></button></td>
+             </tr>
+             <h6>Total : {total}</h6>
             </tbody>
         {/* 
        <h1>{cart.map((x)=>(x.item1.name))}</h1>
        <h2>{cart.map((x)=>(x.quantity))}</h2> */}
        </table>
-       :<h1>No hay items en el carro</h1>
+       :<h1 className="emptyCart">No hay items en el carro</h1>
 
     )
 }

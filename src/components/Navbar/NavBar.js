@@ -3,11 +3,12 @@ import {MenuItems} from "./MenuItems"
 import './Navbar.css'
 import CardWidget from '../CardWidget/CardWidget'
 import { Link } from 'react-router-dom';
+import { useCartContext } from '../../cartContext/CartContext';
 
 
 class Navbar extends React.Component {
     state = {clicked:false}
-
+   
     handleClick = ()=>{
         this.setState({clicked:!this.state.clicked})
     }

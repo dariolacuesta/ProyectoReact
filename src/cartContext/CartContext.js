@@ -9,7 +9,7 @@ export const CartContextProvider = ({children}) =>{
 
     const clear = ()=> setCart([]);
     
-    const removeItem = (id) =>setCart(cart.filter(({item})=>item.id!==id))
+    const removeItem = (id) =>setCart(cart.filter(({item1})=>item1.id!==id))
 
     const isInCart = (id) => id === undefined ? undefined : getItem(id) !== undefined
 
@@ -23,7 +23,7 @@ export const CartContextProvider = ({children}) =>{
         }
     }
 
-    const value ={cart, addItem, isInCart,removeFromCart:removeItem,cleartCrat:clear,cartSize: cart.length}
+    const value ={cart, addItem, isInCart,removeFromCart:removeItem,clearCart:clear,cartSize: cart.length}
 
     return(
         <CartContext.Provider value={value}>

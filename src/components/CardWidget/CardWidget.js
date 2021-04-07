@@ -1,6 +1,7 @@
 import React from 'react'
 import '../button/Button.css'
 import {Link} from 'react-router-dom'
+import { useCartContext } from '../../cartContext/CartContext'
 
 const STYLES = [
     'btn--primary',
@@ -12,18 +13,21 @@ const SIZES = [
     'btn--large'
 ]
 
-export const CardWidget = ({
+
+const CardWidget = ({
     children,
     type,
     onClick,
     cartStyle,
-    cartSize
+    cartSize2
 })=>{
+    let {cartSize} = useCartContext()
+
     const checkCartStyle = STYLES.includes(cartStyle) ? cartStyle : STYLES[0]
-    const checkCartSize = SIZES.includes(cartSize) ? cartSize : SIZES[0]
+    const checkCartSize = SIZES.includes(cartSize2) ? cartSize2 : SIZES[0]
 
     return (
       <Link to="/cart" className= {`btn ${checkCartStyle} ${checkCartSize} fas fa-cart-plus`} onClick={onClick}type={type}>
-            {children}
+          <button class="badge cyan">{cartSize}  {children}</button>
       </Link>)}
 export default CardWidget;
