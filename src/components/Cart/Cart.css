@@ -3,5 +3,13 @@ td {
 }
 
 .emptyCart{
-    text-align :center
+    text-align :center;
+    font-size: 35px;
+    display:grid;
+    padding-top:25px;
 }
+
+h6{
+    text-align: center;
+}
+

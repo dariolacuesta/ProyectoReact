@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {MenuItems} from "./MenuItems"
 import './Navbar.css'
 import CardWidget from '../CardWidget/CardWidget'
@@ -6,21 +6,22 @@ import { Link } from 'react-router-dom';
 import { useCartContext } from '../../cartContext/CartContext';
 
 
-class Navbar extends React.Component {
-    state = {clicked:false}
-   
-    handleClick = ()=>{
-        this.setState({clicked:!this.state.clicked})
+    const  Navbar =()=> {
+    const  [state,setState] = useState(false)
+       
+    let {cartSize} = useCartContext();
+    let handleClick = ()=>{
+        setState({clicked:!state.clicked})
     }
 
-    render(){
+    
         return(
             <nav className="NavbarItems">
                 <Link to={'/'}><h1 className="navbar-logo">Music Store <i className="fas fa-compact-disc fa-sm"></i></h1></Link>
-                <div className="menu-icon" onClick={this.handleClick}>
-                   <i className={this.state.clicked ? 'fas fa-times':'fas fa-bars'}></i>
+                <div className="menu-icon" onClick={handleClick}>
+                   <i className={state.clicked ? 'fas fa-times':'fas fa-bars'}></i>
                 </div>
-                <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
+                <ul className={state.clicked ? 'nav-menu active' : 'nav-menu'}>
                     {MenuItems.map((item,index)=>{
                     return(<li key={index}>
                                 <a className={item.cName} href={item.url}>
@@ -29,9 +30,9 @@ class Navbar extends React.Component {
                             </li>)
                     })}
                 </ul>
-                <CardWidget></CardWidget>
+                {cartSize >0 && <CardWidget></CardWidget>}
             </nav>
         )
-    }
+    
 }
 export default Navbar

@@ -28,6 +28,6 @@ const CardWidget = ({
 
     return (
       <Link to="/cart" className= {`btn ${checkCartStyle} ${checkCartSize} fas fa-cart-plus`} onClick={onClick}type={type}>
-          <button class="badge cyan">{cartSize}  {children}</button>
+          <button className="badge cyan">{cartSize}  {children}</button>
       </Link>)}
 export default CardWidget;

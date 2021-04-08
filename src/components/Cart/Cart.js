@@ -1,5 +1,8 @@
 import React from 'react'
 import { useCartContext } from '../../cartContext/CartContext'
+import './Cart.css'
+import {Link} from 'react-router-dom'
+
 
 const Cart = () =>{
     const {cart,removeFromCart,clearCart,cartSize} = useCartContext();
@@ -36,7 +39,7 @@ const Cart = () =>{
                     <th>Precio</th>
                 </tr>
             </thead>
-            <tbody>
+            <>
              {
               cart.map((x,i)=>{
                   total  += x.item1.price * x.quantity
@@ -46,7 +49,7 @@ const Cart = () =>{
                                   <td>{x.quantity}</td>
                                   <td>{x.item1.price} x Unidad</td>
                                   <td>
-                                      <button id={i} onClick={(e)=>removeItem(e)} class="far fa-window-close"></button>
+                                      <button id={i} onClick={(e)=>removeItem(e)} className="far fa-window-close"></button>
                                   </td>
                       </tr>
                     
@@ -61,13 +64,16 @@ const Cart = () =>{
                  <td ><button onClick={()=>RemoveAllitems()} className="fas fa-trash"></button></td>
              </tr>
              <h6>Total : {total}</h6>
-            </tbody>
+            </>
         {/* 
        <h1>{cart.map((x)=>(x.item1.name))}</h1>
        <h2>{cart.map((x)=>(x.quantity))}</h2> */}
        </table>
-       :<h1 className="emptyCart">No hay items en el carro</h1>
-
+       
+       :<>
+       <p className="emptyCart">No hay items en el carro,quizas quieras volver al catalogo</p>
+       <Link to ="/" className="emptyCart">Catalogo</Link>
+       </>
     )
 }
 
