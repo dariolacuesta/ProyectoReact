@@ -11,12 +11,12 @@
         cName:'nav-links'
     },
     {
-        title:'Products',
+        title:'Proximos Lanzamientos',
         url: '#',
         cName:'nav-links'
     },
     {
-        title:'Contact Us',
+        title:'Sobre nosotros',
         url: '#',
         cName:'nav-links'
     },

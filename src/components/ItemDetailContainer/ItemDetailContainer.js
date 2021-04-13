@@ -25,7 +25,7 @@ const getItem = () => {
     return new Promise((resolve)=>{
         setTimeout(()=>{
             resolve(Itemdata)
-        },2000);
+        },0);
     })
 }
 

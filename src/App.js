@@ -6,6 +6,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import {BrowserRouter,Switch,Route} from 'react-router-dom';
 import Cart from './components/Cart/Cart'
 import {CartContextProvider} from './cartContext/CartContext';
+import {getFirestore} from './configs/firebase'
 
 function App() {
 
