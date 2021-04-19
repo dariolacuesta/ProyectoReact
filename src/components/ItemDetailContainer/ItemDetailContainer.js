@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import { useParams } from 'react-router'
-import Itemdata from '../../mock-data/Itemdata.json'
+import { getFirestore } from '../../configs/firebase'
 import  ItemDetail from '../ItemDetail/ItemDetail'
 import ItemListContainer from '../ItemListContainer/ItemListContainer'
 
@@ -11,26 +11,15 @@ const [Song,setSong] = useState([])
 const [Item,setItem] = useState([])
 let {id} = useParams()
 
-
 useEffect(()=>{
-
-  getItem().then((result)=>{
-        let filter = id ? result.filter((el)=> el.id === parseInt(id)) : result
-        setItem(filter);
-         setSong(result[id].songs.map(song=><li key={song}>{song}</li>))
-        })
-},[id]
-);
-const getItem = () => {
-    return new Promise((resolve)=>{
-        setTimeout(()=>{
-            resolve(Itemdata)
-        },0);
+    const db = getFirestore();
+    const items = db.collection('menu')
+    
+    items.where("id","==",parseInt(id)).get().then((result)=>{
+        setItem(result.docs.map(doc=>doc.data()));  
+        setSong(result.docs.map(songs=>songs.data().songs.map((song,index) => <li key={index}>{song}</li>))) 
     })
-}
-
-
-
+},[id]);
 
 
 return (

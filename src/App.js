@@ -4,9 +4,10 @@ import './App.css';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import {BrowserRouter,Switch,Route} from 'react-router-dom';
-import Cart from './components/Cart/Cart'
+import Cart from './components/Cart/Cart';
+import OrderDetail from './components/OrderDetail/OrderDetail'
 import {CartContextProvider} from './cartContext/CartContext';
-import {getFirestore} from './configs/firebase'
+import Checkout from './components/CheckOut/Chekout'
 
 function App() {
 
@@ -25,6 +26,12 @@ function App() {
       <Route exact path="/">
           <ItemListContainer/>
       </Route>
+      <Route exact path="/checkout">
+        <Checkout/>      
+        </Route>
+        <Route exact path="/order/:id">
+                <OrderDetail/>
+        </Route>
     </Switch>
 </BrowserRouter>
 </CartContextProvider>

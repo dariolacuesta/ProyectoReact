@@ -28,7 +28,7 @@ const  ItemDetail= ({item1,song})=>{
                 return (
                     <>
                     <ItemCount stock = {stock} initial ={1} onAdd ={newStock}/>
-                    <Link to ="/cart" className="finish-cart">Finalizar Compra</Link>
+                    <Link to ="/cart" className="finish-cart">Ir al Carro</Link>
                 </>
                 )
             }else {

@@ -23,7 +23,9 @@ export const CartContextProvider = ({children}) =>{
         }
     }
 
+    
     const value ={cart, addItem, isInCart,removeFromCart:removeItem,clearCart:clear,cartSize: cart.length}
+
 
     return(
         <CartContext.Provider value={value}>

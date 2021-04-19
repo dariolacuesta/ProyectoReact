@@ -30,46 +30,46 @@ const Cart = () =>{
 
     return(
        cartSize >0 ?
-       
-         <table className="container">
-            <thead>
-                <tr>
+       <>
+         <table className="container striped centered">
+                <thead>
+                <tr className="tr">    
                     <th>Producto</th>
                     <th>Cantidad</th>
                     <th>Precio</th>
                 </tr>
-            </thead>
-            <>
+                </thead>
+                <tbody>
              {
               cart.map((x,i)=>{
                   total  += x.item1.price * x.quantity
+                  console.log(total)
                   return(
                       <tr key={i}>
                                   <td>{x.item1.name}</td>
                                   <td>{x.quantity}</td>
                                   <td>{x.item1.price} x Unidad</td>
                                   <td>
-                                      <button id={i} onClick={(e)=>removeItem(e)} className="far fa-window-close"></button>
+                                      <button id={i} onClick={(e)=>removeItem(e)} className="far fa-window-close fa-1x"></button>
                                   </td>
-                      </tr>
-                    
-                  )
-                  
-              })
+                      </tr>)})
              }
+             
              <tr>
                  <td/>
                  <td/>
                  <td >Vaciar Carrito</td>
-                 <td ><button onClick={()=>RemoveAllitems()} className="fas fa-trash"></button></td>
+                 <td ><button onClick={()=>RemoveAllitems()} className="fas fa-trash fa-1x"></button></td>
              </tr>
-             <h6>Total : {total}</h6>
-            </>
-        {/* 
-       <h1>{cart.map((x)=>(x.item1.name))}</h1>
-       <h2>{cart.map((x)=>(x.quantity))}</h2> */}
+            </tbody>
        </table>
-       
+       <div className="row">
+           <h6  className="col s6">Total : ${total}</h6>
+            <Link to ="/Checkout"  className="paybutton col s2 waves-effect waves-light">
+                <i className="material-icons left">payment</i>Finalizar Compra
+            </Link>
+       </div>
+       </>
        :<>
        <p className="emptyCart">No hay items en el carro,quizas quieras volver al catalogo</p>
        <Link to ="/" className="emptyCart">Catalogo</Link>

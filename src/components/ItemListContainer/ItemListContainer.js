@@ -25,7 +25,7 @@ const ItemListContainer = ()=>{
       const menu = db.collection('menu')
       menu.get().then(res =>{
          setItems(res.docs.map(doc=>doc.data()));
-        // res.docs.map(d=> console.log({id:d.id,...d.data()}))
+     
       })
     },[])
 

@@ -11,5 +11,25 @@ td {
 
 h6{
     text-align: center;
+    
 }
 
+.tr{
+    font-size: 25px;
+    font:bold;
+    font-weight: bold;
+    color:brown;
+    text-align:center;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.paybutton{
+    background-color:lightblue;
+    border-radius: 5px;
+    height: 26px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
