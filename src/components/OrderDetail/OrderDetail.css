@@ -2,11 +2,20 @@
 .cardDetail{
     text-align: center;   
     justify-content: center;
-   
-}
-
-.teal{
-    justify-content: center;
     margin-left: auto;
     margin-right: auto;
+    display:grid;
+}
+
+.backbutton{
+    font-size: 30px;
+    color:white;
+    background-color:black;
+    margin-top: 15px;
+    border-radius: 6px;
+}
+hr{  
+    height: 10px;
+    width: 100%;
+    background-color: black;
 }

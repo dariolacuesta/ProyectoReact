@@ -68,6 +68,9 @@ const Cart = () =>{
             <Link to ="/Checkout"  className="paybutton col s2 waves-effect waves-light">
                 <i className="material-icons left">payment</i>Finalizar Compra
             </Link>
+            <Link to ="/"  className="paybutton col s2 waves-effect waves-light">
+                <i className="material-icons left">album</i>Seguir Comprando
+            </Link>
        </div>
        </>
        :<>

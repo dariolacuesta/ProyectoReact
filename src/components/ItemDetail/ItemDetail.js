@@ -39,14 +39,14 @@ const  ItemDetail= ({item1,song})=>{
     return(
     <>
     <div className="container">
-    <h1>{item1.name}</h1>
-    <h2>{item1.band}</h2>
+    <h1 className="Title">{item1.name}</h1>
+    <h2 className="Band">{item1.band}</h2>
     <img src={item1.img} alt=""/>
-    <h6>{item1.genre}</h6>
-    <p>{item1.review}</p>
-    <h4>Lista de temas</h4>
+    <h6>Genero : {item1.genre}</h6>
+    <p className="review">{item1.review}</p>
+    <h4 className="Songlist">Lista de temas</h4>
     {song}
-    <h2>Precio : ${item1.price}</h2>
+    <h2 className="Songlist">Precio : ${item1.price}</h2>
     </div>
     <div className="x">
     <ShowCounter/>

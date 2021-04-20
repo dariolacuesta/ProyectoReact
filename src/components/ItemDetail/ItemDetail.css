@@ -1,4 +1,5 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100&family=EB+Garamond:ital@0;1&display=swap');
 img {
     width:600px;
 	height:400px;
@@ -61,4 +62,20 @@ p{
     background:darkgreen;
     color: #6568f4;
     transition:250ms;
+}
+
+.Title{
+	font-family: 'Antonio', sans-serif;
+}
+.Band{
+	font-family: 'Antonio', sans-serif;
+}
+
+.review{
+    font-family: 'EB Garamond', serif;
+	font-size: 17px;
+}
+
+.Songlist{
+	font-family: 'Antonio', sans-serif;
 }

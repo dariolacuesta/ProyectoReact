@@ -32,24 +32,29 @@ const OrderDetail = () => {
                 <h2>Su pedido fue realizado con exito</h2>
                     <p>ID de su pedido: {id}</p>              
             <div class="row">
-              <div class="col s12 m4" >
-               <div class="card-panel teal">
+            <div class="col s12 cardDetail">
+              <div class="card blue-grey darken-1">
+              <div class="card-content white-text">
+              <span class="card-title">Compra Realizada</span>
                  {
                  order.products.map((OrderDetail,i)=>
                     <li key={i}>
-                        {OrderDetail.quantity}  CDS {OrderDetail.item1.name}
+                        {OrderDetail.quantity} x {OrderDetail.item1.name}
                         <br/>
                         {OrderDetail.item1.band}
                         <br/>
                         <span>Total: ${OrderDetail.item1.price * OrderDetail.quantity} </span>
+                        
+                        <hr></hr>
                     </li>)
                 }
-                {/* <span>Total: ${OrderDetail.item1.price * OrderDetail.quantity}</span> */}
+                Total:$ {order.total}
                 </div>
+              </div>
                </div>
             </div>
                 <Link to="/" className="bnt">
-                    <button>Volver al inicio</button>
+                    <button className="backbutton">Volver al inicio</button>
                 </Link>
                 
                 </div>
