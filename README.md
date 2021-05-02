@@ -66,3 +66,7 @@ Esta sección fue movida aqui: [https://facebook.github.io/create-react-app/docs
 ### `npm run build` falla al minificar
 
 Esta sección fue movida aqui [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Demo del Proyecto
+
+Haga click aqui https://res.cloudinary.com/dbilk1580/video/upload/v1619983899/Music_Store_-_Mozilla_Firefox_2021-05-02_16-28-20_se7nce.mp4
