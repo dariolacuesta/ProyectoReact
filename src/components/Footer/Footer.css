@@ -1,0 +1,12 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+.page-footer{
+  background:linear-gradient(90deg,rgb(0, 0, 0)0%,rgb(29, 18, 243)100%);
+}

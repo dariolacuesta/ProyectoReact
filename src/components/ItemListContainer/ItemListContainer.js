@@ -3,6 +3,7 @@ import  './ItemListContainer.css'
 import {useState,useEffect} from "react";
 import ItemList from "../ItemList/ItemList"
 import { getFirestore } from '../../configs/firebase';
+import EmptyList from '../EmptyList/EmptyList';
 
 
 const ItemListContainer = ()=>{
@@ -31,7 +32,8 @@ const ItemListContainer = ()=>{
 
 return(
 <div>
-    <ItemList items={items}/>
+    {items.length > 0 ? <ItemList items={items}/> :<EmptyList/>}
+   
 </div>
  )};
  export default ItemListContainer;

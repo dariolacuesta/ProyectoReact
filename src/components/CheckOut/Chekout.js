@@ -6,27 +6,23 @@ import firebase from 'firebase/app'
 import './Chekout.css'
 const Checkout = () => {
     const {cart,clearCart} = useCartContext()
-
-    const[validate, setValidation] = useState("false");
     const [order,setOrder] = useState(undefined)
-    // const [emptyInput,setEmptyInput] = useState(false);
-    // const [wrongEmail, setWrongEmail] = useState(false);
-
-    const submit = (e) => {
-        e.preventDefault()
-        e.stopPropagation()
-        let form = e.target
-        setValidation("true")
+    const [emptyInput,setEmptyInput] = useState(false);
+    const [wrongEmail, setWrongEmail] = useState(false);
+    const [finishPurchase, setFinishPurchase] = useState(false)
+  
     
-    if(form.checkValidity()){
+    
+    const createOrder = () => {
     const newOrder = {
       costumer :{
         name: document.getElementById("first_name").value + ' ' + document.getElementById("last_name").value,
         email: document.getElementById("email").value,
-        telephone: document.getElementById("telephone").value
+        telephone: document.getElementById("telephone").value,
+        email2 : document.getElementById("email2").value
       },
       products: [...cart], 
-      total : cart.reduce((total,order)=> total + order.item1.price * order.quantity,100),
+      total : cart.reduce((total,order)=> total + order.item1.price * order.quantity,1),
       createOn: firebase.firestore.Timestamp.fromDate(new Date())
     }
     const db = getFirestore()
@@ -39,7 +35,6 @@ const Checkout = () => {
         details:newOrder
       })
   
-
     cart.forEach(element=>{
       let stockUpdate = {}
       stockUpdate[`${element.item.size}`] = firebase.firestore.FieldValue.increment(element.quantity * -1)
@@ -50,58 +45,103 @@ const Checkout = () => {
         console.log("Error al actualizar stock",err)
       })
     })
-
-    clearCart()
   })
     .catch((error)=>setOrder({
       id:undefined,
       details:error
          }
       ))
+      clearCart()
+    }
+  
+    const checkData = (e) =>{
+    e.preventDefault();
+    const email = document.getElementById("email").value;
+    const email2 = document.getElementById("email2").value;
+
+    if(email === '' || email2 ===""){
+      setEmptyInput(true);
+    }else{
+      setEmptyInput(false);
+      if(email=== email2){
+        setWrongEmail(false); 
+        createOrder();
+        setFinishPurchase(true)
+      }
+      else{
+        setWrongEmail(true)
+      }
     }
   }
 
     const ClientInfo = () => {
         return (
+          finishPurchase === false ?
             <>
             <h5>Datos de la Facturación</h5>
             <div className="row col s12 formu">
-    <form validate={validate} className={validate ? "was-validated" : "not-validated" } onSubmit={(e) => submit(e)}>
+    <form>
       <div className="row">
         <div className="input-field col s6">
-          <input placeholder="Nombre" id="first_name" type="text" className="validate"/>
+          <input placeholder="Nombre" id="first_name" type="text" required className="validate"/>
           <label htmlFor="first_name"></label>
         </div>
         <div className="input-field col s6">
-          <input id="last_name" type="text" className="validate" placeholder="Apellido"/>
+          <input id="last_name" type="text" className="validate" required placeholder="Apellido"/>
           <label htmlFor="last_name"></label>
         </div>
       </div>
       <div className="row">
         <div className="input-field col s12">
-          <input id="email" type="email" className="validate" placeholder="Email"/>
+          <input id="email" type="email" className="validate" required placeholder="Email"/>
           <label htmlFor="email"></label>
         </div>
         <div className="input-field col s12">
-          <input id="email2" type="email" className="validate" placeholder="Reingrese Email"/>
+          <input id="email2" type="email" className="validate" required placeholder="Reingrese Email"/>
           <label htmlFor="email"></label>
         </div>
       </div>
       <div className="row">
         <div className="input-field col s12">
-          <input id="telephone" type="tel" className="validate" placeholder="Telefono"/>
+          <input id="telephone" type="tel" className="validate" required placeholder="Telefono"/>
           <label htmlFor="telephone"></label>
         </div>
       </div>
       <div className="input-field ">
-    <button className="col s12" type="submit">Finalizar compra</button>
+        {
+          emptyInput ?
+          <span className="warning-text"> Por favor complete todos los campos</span>
+          :wrongEmail &&
+          <span className="warning-text">El correo no coincide</span>
+        }
+    <button className="col s12" type="submit" onClick={(e)=>checkData(e)}>Finalizar compra</button>
     <p>Los datos de su compra y la factura seran enviados a su mail</p>
   </div>
     </form>
   </div>
-            </> 
-            ) 
-        }
+  </> 
+  :
+  <>
+    <div className="purchaseMsg">
+       <h2>Su compra esta siendo procesada</h2>
+       <div className="preloader-wrapper big active">
+    <div className="spinner-layer spinner-blue-only">
+      <div className="circle-clipper left">
+        <div className="circle"></div>
+      </div><div className="gap-patch">
+        <div className="circle"></div>
+      </div><div className="circle-clipper right">
+        <div className="circle"></div>
+      </div>
+    </div>
+  </div>
+     </div>
+  </>
+      ) 
+  }
+
+
+
 
 return (
     <div>

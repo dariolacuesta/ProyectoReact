@@ -12,3 +12,17 @@ h5{
 ::placeholder{
 color:blue
 }
+
+.warning-text {
+    color: red;
+    display: block;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.purchaseMsg{
+    text-align: center;
+
+}

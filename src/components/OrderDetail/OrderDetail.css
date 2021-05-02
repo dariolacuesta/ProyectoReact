@@ -19,3 +19,8 @@ hr{
     width: 100%;
     background-color: black;
 }
+
+.miniImage{
+    height: 80px;
+    width: 80px;
+}
