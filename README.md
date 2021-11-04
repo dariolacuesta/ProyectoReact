@@ -23,7 +23,6 @@ Una vez inicializado el proyecto en modo desarrollo abrimos el navegador con la 
 [http://localhost:3000](http://localhost:3000)
 
 La pagina se recargara si realizas cambios en el codigo
-You will also see any lint errors in the console.
 
 ### `npm test`
 
@@ -42,7 +41,6 @@ Para mas informacion leer la siguiente documentación[deployment](https://facebo
 
 Puedes aprender mas en [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
 ### Code Splitting
 
